@@ -1,6 +1,6 @@
-package ui;
+package main.ui;
 
-import model.*;
+import main.model.*;
 
 public class myCalculator {
     private Matrix matrix;
@@ -9,6 +9,8 @@ public class myCalculator {
         this.matrix = matrix;
         matrix.reduction();
     }
+
+    
 
 
     

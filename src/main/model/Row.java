@@ -1,4 +1,4 @@
-package model;
+package main.model;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -9,6 +9,14 @@ public class Row implements Iterable<Double>{
 
     public Row() {
         row = new ArrayList<>();
+    }
+
+    public Row(List<Double> row) {
+        this.row = row;
+    }
+
+    public void add(Double element) {
+        row.add(element);
     }
 
     // EFFECTS: find the index of first non-zero entry(i.e. [0,0,6,3,5] return 2),return the index if find one, else return 99;
@@ -44,6 +52,7 @@ public class Row implements Iterable<Double>{
     public void set(int index, double num) {
         row.set(index,num);
     }
+
     @Override
     public Iterator<Double> iterator() {
         return row.iterator();
