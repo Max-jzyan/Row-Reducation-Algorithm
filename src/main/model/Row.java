@@ -58,4 +58,37 @@ public class Row implements Iterable<Double>{
         return row.iterator();
     }
 
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((row == null) ? 0 : row.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Row other = (Row) obj;
+        if (row == null) {
+            if (other.row != null)
+                return false;
+        } else if (!row.equals(other.row))
+            return false;
+        return true;
+    }
+
+    public void display() {
+        for(int i = 0;i < row.size();i++) {
+            double result = row.get(i);
+            System.out.print(" " + result + " ");
+        }
+    }
+    
+
 }

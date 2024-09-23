@@ -36,7 +36,7 @@ public class Matrix {
     }
 
     public List<Row> reduction(int n, List<Row> m) {
-        if (n <= 1) {
+        if (n < 1) {
             return m;
         }
 
@@ -66,6 +66,46 @@ public class Matrix {
         }
         
         return reduction(n-1, m.subList(1, m.size()));
+    }
+
+    public void add(Row row) {
+        matrix.add(row);
+    }
+
+
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((matrix == null) ? 0 : matrix.hashCode());
+        return result;
+    }
+
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Matrix other = (Matrix) obj;
+        if (matrix == null) {
+            if (other.matrix != null)
+                return false;
+        } else if (!matrix.equals(other.matrix))
+            return false;
+        return true;
+    }
+
+    public void display() {
+        for(int i = 0;i < matrix.size();i++) {
+            matrix.get(i).display();
+            System.out.println("\n");
+        }
     }
 
 
